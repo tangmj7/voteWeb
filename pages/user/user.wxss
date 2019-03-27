@@ -1,0 +1,70 @@
+/* pages/user/user.wxss */
+.user-page{
+  background: #fff;
+}
+.user-box{
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px 0 10px;
+
+}
+.navbar{
+  background: #fff;
+  height: 70px;
+  /* flex: none; */
+  display: flex;
+}
+
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 70px;
+}
+.navbar .item.active{
+  color: #1d953f;
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #1d953f;
+}
+.release-box,.involve-box,
+.release-operate,.involve-operate{
+  height: 50px;
+  line-height: 50px;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+}
+.release-operate{
+  text-align: center;
+  position: relative;
+}
+.operate-edit,.operate-eye,.operate-del{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  line-height: 40px;
+}
+.operate-edit{
+  left: 20px;
+  top: 10px;
+}
+.operate-eye{
+  left: 50%;
+  top: 10px;
+  margin-left: -20px;
+}
+.operate-del{
+  top: 10px;
+  right: 20px;
+}
+.release-operate image{
+  width: 32px;
+  height: 32px;
+}

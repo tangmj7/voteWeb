@@ -1,0 +1,86 @@
+.vote-box{
+  /* padding: 0 10px 0 10px; */
+  position: relative;
+}
+.vote-title{
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  margin-left: 10px;
+}
+.share,.share-pic{
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  /* background: url('img/share.png'); */
+}
+.share{
+  opacity: 0;
+  z-index: 99;
+}
+.vote-detail{
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  margin-left: 10px;
+
+}
+.vote-detail text{
+  color: #1d953f;
+}
+.vote-options{
+  margin-top: 10px;
+}
+.optionA{
+  height: 40px;
+  line-height: 40px;
+  background: #fff;
+  padding: 0 10px 0 10px;
+  position: relative;
+}
+.option-name{
+  height: 37px;
+  font-size: 12px;
+}
+.confirm-pic{
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: 30px;
+  top: 4px;
+}
+.option-percent{
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  top: 4px;
+}
+.hidden{
+  display: none;
+}
+.progress-box{
+  height: 5px;
+}
+.bootom-box{
+  margin-top: 10px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 10px;
+}
+.date-limit{
+  margin-left: 10px;  
+  float: left;
+}
+.userCount{
+  margin-right: 10px;
+  float: right;
+}
+.vote-confirm-btn{
+  margin-top: 10px;
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+}

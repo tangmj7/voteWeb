@@ -1,0 +1,87 @@
+<form bindsubmit='formSubmit'>
+<view class='page'>
+  <view class="add_box">
+     <view class='vote-option'>
+         <view class='vote-title-box'>
+             <input class='vote-title' name='vote_title' type='text' maxlength='20' placeholder='投票标题' bindblur='titleValue'>
+             </input>
+         </view>
+
+         <view class='vote-detail-box'>
+             <input class='vote-detail' name='vote_detail' type='text' maxlength='100' placeholder='补充描述（选填）'>
+             </input> 
+         </view>
+
+         <view class='vote-select-box'>
+             <view class='vote-select-view'wx:for-items='{{optionList}}' wx:key='{{index}}'>
+                 <image class='vote-select-icon' src='{{item.icon}}' bindtap='delOption' data-index='{{index}}'></image>
+                 <input class='vote-select' name='vote_select{{index+1}}' type='text' placeholder='选项{{index+1}}' value='{{item.value}}' data-index='{{index}}' bindblur='optionValue'>
+                 </input> 
+             <!-- <view class='vote-select-view'wx:for-items='{{nameList}}' wx:key='{{Index}}'>
+
+                 <input class='vote-select' name='vote_select{{index+1}}' type='text' placeholder='选项{{index+1}}' value='{{item.value}}' data-index='{{index}}' bindinput='optionValue'>
+                 </input> 
+             </view> -->
+
+             </view>
+             <view class='vote-select-add' bindtap='addOption'>
+                 <image class='vote-select-add-icon' src='img/add.png'></image>
+                 <view class='vote-add'>添加选项</view> 
+             </view>
+
+         </view>
+     </view>
+     
+     <view class='vote-choose'>
+         <view class='vote-type'>
+             <text>投票类型</text>
+             <view class='typePic'>
+                 <picker bindchange='bindChangeVoteType' name='vote_type' value='{{voteTypeIndex}}' range='{{voteType}}'>
+                <text class='voteTypePicker'>{{voteType[voteTypeIndex]}}</text>
+             </picker>
+             </view>
+         </view>
+
+         <view class='vote-region'>
+             <text>地区限制</text>
+             <view class='regionPic'>
+                 <picker mode='region' name='vote_region' bindchange='bindChangeVoteRegion' value='{{region}}' custom-item='{{customItem}}'>
+                <text class='voteRegionPicker' wx:if="{{region[2]=='不限'&& region[0]!='不限'&& region[1]!='不限'}}">{{region[0]}} {{region[1]}}</text>
+                <text class='voteRegionPicker' wx:elif="{{region[1]=='不限'&& region[2]=='不限'&& region[0]!='不限'}}">{{region[0]}}</text>
+                <text class='voteRegionPicker' wx:elif="{{region[0]=='不限'&& region[1]=='不限'&& region[2]=='不限'}}">{{customItem}}</text>
+                <text class='voteRegionPicker' wx:else>{{region[0]}} {{region[1]}} {{region[2]}}</text>
+                </picker>
+             </view>
+         </view>
+         
+         
+         <view class='date-limit'>
+             <text>截止时间</text>
+             <view class='datePic'>
+                 <picker mode='date' name='vote_date' value='{{date}}' start="2018-09-01"end="5000-09-01" bindchange="bindChangeVoteDate">
+                <text class='voteDatePicker'>{{date}}</text>
+                </picker>
+             </view>
+
+             <view class='timePic'>
+                 <picker mode='time' name='vote_time' value='{{time}}' start='00:00' end='23:00' bindchange='bindChangeVoteTime'>
+                <text class='voteTimePicker'>{{time}}</text>
+                </picker>
+             </view>
+         </view>
+
+         <view class='vote-anonymous'>
+             <text>匿名投票</text>
+             <view class='typePic'>
+                 <switch class='anonymous-btn' color='#1d953f' name='vote_anonymous' bindchange='bindChangeAnonymous'></switch>
+             </view>
+         </view>
+
+     </view>
+
+     <view class='add-confirm'>
+         <button class='add-confirm-btn' type='primary' form-type='submit'>确认</button>
+     </view>
+  </view>
+</view>
+</form>

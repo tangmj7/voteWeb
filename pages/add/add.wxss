@@ -1,0 +1,92 @@
+/* pages/add/add.wxss */
+.add-box{
+  /* height: 200px; */
+  position: relative;
+}
+.vote-option{
+  /* height: 220px; */
+  position: relative;
+  background: #fff;
+  color: #ccc;
+  padding: 0 10px 0 10px;
+  box-shadow: 3px 3px 5px 0 #ccc;
+}
+.vote-title-box,.vote-detail-box,
+.vote-select-view{
+  height: 50px;
+  line-height: 50px;
+  border-bottom:1px solid #ccc; 
+}
+.vote-select-add{
+  height: 50px;
+  line-height: 50px;
+}
+.vote-select-view,.vote-select-add{
+  position: relative;
+}
+.vote-detail-box{
+  font-size: 14px;
+}
+.vote-title,.vote-detail{
+  height: 50px;
+  line-height: 50px;
+}
+.vote-title{
+  font-size: 16px;
+}
+.vote-select-box{
+  font-size: 12px;
+}
+.vote-select,.vote-add{
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  top: 0px;
+  left: 30px;
+}
+.vote-select-icon,.vote-select-add-icon{
+  width: 24px;
+  height: 24px;
+  padding-top: 10px;
+  /* background: yellow; */
+}
+
+.vote-choose{
+  position: relative;
+  background: #fff;
+  font-size: 12px;
+  margin-top: 30px;
+  padding: 0 10px 0 10px;
+  box-shadow: 3px 3px 5px 0 #ccc;
+
+}
+.vote-type,.date-limit,.vote-region{
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+.vote-anonymous{
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+}
+.typePic,.timePic,.regionPic{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.datePic{
+  position: absolute;
+  top: 0;
+  right: 50px;
+}
+
+.add-confirm{
+  /* background: #f0f0f0; */
+  position: relative;
+  margin-top: 40px;
+}
+.add-confirm-btn{
+  width: 300px;
+}

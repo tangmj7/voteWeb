@@ -1,0 +1,103 @@
+/* pages/home/home.wxss */
+.home_box{
+
+}
+.search_view{
+    height: 50px;
+    /* line-height: 50px; */
+    background: #1d953f;
+    padding: 0 10px 0 10px;
+    position: relative;
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+}
+.search_input,.input input{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    background: #fff;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding-right: 40px;
+ }
+ .search_view .search,.search_view .search-pic{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    /* background: url('img/share.png'); */
+  }
+  .search-pic{
+      z-index: 5;
+  }
+  .search{
+    opacity: 0;
+    z-index: 99;
+  }
+.hot{
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    /* border-bottom: 1px solid #ccc; */
+    background: #fff;
+    font-size: 14px;
+    color: red;
+}
+.add_box,._box{
+    height: 130px;
+    margin-top: 10px;
+    background: #fff;
+    padding: 0 10px 0 10px;
+}
+ .top{
+    height: 30px;
+    border-bottom: 1px solid #ccc;
+    line-height: 30px;
+    position: relative;
+ }
+.add_box .sort{
+    font-size: 16px;
+    height: 30px;
+    width: 30px;
+    float: left;
+    color: red;
+}
+.add_box .share,.add_box .share-pic{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    /* background: url('img/share.png'); */
+  }
+  .share{
+    opacity: 0;
+    z-index: 99;
+  }
+.add_box .user_box{
+    height: 40px;
+    position: relative;
+}
+.add_box .user_box .user_avatarUrl{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0px;
+    top: 5px;
+ }
+ .add_box .user_box .user_name{
+    position: absolute;
+    left: 40px;
+    bottom: 5px;
+    font-size: 14px;
+ }
+ .add_box .vote_title{
+     height: 60px;
+     line-height: 60px;
+  }

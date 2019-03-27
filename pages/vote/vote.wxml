@@ -1,0 +1,35 @@
+<view class='vote-box'>
+    <view class='vote-title'>{{vote_title}}</view>
+    <button class="share" open-type="share"data-add='{{add_id}}'data-user='{{user_name}}'>
+    </button>
+        <image class="share-pic" src="img/share.png" />
+    <view class='vote-detail'>{{vote_detail}}
+        <text>[{{vote_type}}]</text>
+    </view>
+    <view class='vote-options'wx:for-items="{{vote_option}}" wx:key="{{index}}">
+         <view class='optionA' bindtap='bindChooseOption'data-index='{{index}}' data-flag='{{item.flag}}' data-count='{{item.count}}'>
+             <view class='option-name'data-index='{{index}}'>{{item.option}}</view>
+             <wxs module="fn">
+                    module.exports = {
+                        floor: function(num){
+                            return Math.floor(num);
+                        }
+                    }
+                </wxs>
+             <view wx:if="{{countAllOption==0}}" class='option-percent'data-index='{{index}}'hidden="{{true}}">{{fn.floor(item.count/countAllOption*100)}}%</view>
+
+             <view wx:else class='option-percent'data-index='{{index}}'hidden="{{percentFlag}}">{{fn.floor(item.count/countAllOption*100)}}%</view>
+                
+             <image class="confirm-pic"data-index='{{index}}' src="img/confirm.png" hidden="{{item.flag}}" />
+
+             <view class='progress-box'>
+                 <progress class='progress' percent='{{fn.floor(item.count/countAllOption*100)}}' activeColor='#1d953f' stroke-width='3'></progress>
+             </view>
+         </view>
+    </view>
+    <view class='bootom-box'>
+    <view class='date-limit'>投票截至：{{date}}</view>
+    <view class='userCount'>参与人数：{{userCount}}</view>
+    </view>
+    <button class='vote-confirm-btn' type='primary' form-type='submit' disabled="{{btnFlag}}" bindtap='voteSubmit'>确认</button>
+</view>

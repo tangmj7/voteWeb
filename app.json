@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/login/login",
+    "pages/home/home",
+    "pages/add/add",
+    "pages/option/option",
+    "pages/user/user",
+    "pages/vote/vote",
+    "pages/voteHtml/voteHtml",
+    "pages/voteHome/voteHome",
+    "pages/voteRank/voteRank",
+    "pages/voteDetail/voteDetail",    
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#1d953f",
+    "navigationBarTitleText": "投票",
+    "navigationBarTextStyle":"white",
+    "backgroundColor":"#f0f0f0"
+  },
+  "tabBar":{
+    "color": "#707070",
+    "selectedColor":"#1d953f",
+    "borderStylle":"white",
+    "list":[{
+      "selectedIconPath":"images/index_hover.png",
+      "iconPath":"images/index.png",
+      "pagePath":"pages/home/home",
+      "text":"首页"
+    },{
+      "selectedIconPath": "images/add_hover.png",
+      "iconPath": "images/add.png",
+      "pagePath": "pages/option/option",
+      "text": "新建"
+    },{
+      "selectedIconPath": "images/user_hover.png",
+      "iconPath": "images/user.png",
+      "pagePath": "pages/user/user",
+      "text": "我的"
+    }]
+  }
+}

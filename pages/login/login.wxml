@@ -1,0 +1,16 @@
+<!--pages/a/a.wxml-->
+<view class="login-box">
+    <view class='header'>
+        <image class="header-pic" src='../../images/add.png'></image>
+    </view>
+ 
+    <view class='content'>
+        <view>申请获取以下权限</view>
+        <text>获得你的公开信息(昵称，头像等)</text>
+    </view>
+ 
+    <button class='getUser-btn' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+        授权登录
+    </button>
+</view>
+ 

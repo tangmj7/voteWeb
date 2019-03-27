@@ -1,0 +1,24 @@
+<view class="home_box">
+    <view class="search_view">
+        <view class="input">
+        <input class="search_input" confirm-type="search" maxlength="100" placeholder="请输入搜索内容" value="{{value}}" 
+        bindinput="searchInput" bindfocus="searchFocus" bindblur="searchBlur" /></view>
+        <button class="search" bindtap="bindSearch" data-value="{{value}}">
+       </button>
+        <image class="search-pic" src="img/search.png" />
+    </view>
+    <!-- <view class="hot">热门</view> -->
+    <view class='add_box' wx:for-items="{{addList}}" wx:key="{{index}}">
+        <view class="top">
+        <view class="sort">{{index+1}}</view>
+        <button class="share" open-type="share"data-add='{{item._id}}'data-user='{{item.user_name}}'>
+       </button>
+        <image class="share-pic" src="img/share.png" />
+        </view>
+        <view class='user_box'>
+            <image class='user_avatarUrl' src="{{item.user_avatarUrl}}"></image>
+            <view class='user_name'>{{item.user_name}}</view>
+        </view>
+        <view class='vote_title'data-add='{{item._id}}' bindtap='bindEye'>{{item.vote_title}}</view>
+    </view>
+</view>

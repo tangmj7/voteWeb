@@ -1,0 +1,43 @@
+<view class='user-page'>
+<view class='user-box'> 
+    <view class="navbar">
+      <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+    </view>
+ 
+<!--我发布的-->
+    <view hidden="{{currentTab!==0}}" class='myRelease' wx:for-items="{{releaseList}}" wx:key="{{index}}">
+        <view class='release-box' bindtap='bindOperateShow'data-index='{{index}}'data-flag='{{item.flag}}'>
+            <view class='release-title' data-index='{{index}}'>{{item.vote_title}}</view>
+        </view>
+        <view class='release-operate' data-index='{{index}}' hidden='{{item.flag}}'>
+            <view class='operate-edit'>
+                <image class='edit-pic' src='img/edit.png'data-index='{{index}}' data-add='{{item.add_id}}' bindtap='bindEdit'></image>
+            </view>
+            <view class='operate-eye'>
+                <image class='eye-pic' src='img/eye.png'data-index='{{index}}' data-add='{{item._id}}' bindtap='bindEye'></image>
+            </view>
+            <view class='operate-del'>
+                <image class='del-pic' src='img/del.png'data-del='{{item._id}}' bindtap='bindDel'></image>
+            </view>
+      </view>
+    </view>
+ 
+<!--我参与的-->
+    <view hidden="{{currentTab!==1}}"class='myInvolve' wx:for-items="{{releaseList}}" wx:key="{{index}}">
+      <view class='involve-box' bindtap='bindOperateShow'data-index='{{index}}'data-flag='{{item.flag}}'>
+            <view class='involve-title'data-index='{{index}}' data-add='{{item._id}}' bindtap='bindEye'>{{item.vote_title}}</view>
+      </view>
+      <!-- <view class='release-operate' data-index='{{index}}' hidden='{{item.flag}}'>
+            <view class='operate-edit'>
+                <image class='edit-pic' src='img/edit.png' bindtap='bindEdit'></image>
+            </view>
+            <view class='operate-eye'>
+                <image class='eye-pic' src='img/eye.png'data-index='{{index}}' data-add='{{item.add_id}}' bindtap='bindEye'></image>
+            </view>
+            <view class='operate-del'>
+                <image class='del-pic' src='img/del.png'data-index='{{index}}' bindtap='bindInvolveDel'></image>
+            </view>
+      </view> -->
+    </view>
+</view>
+</view>

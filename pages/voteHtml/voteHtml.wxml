@@ -1,0 +1,75 @@
+<view wx:if="{{picFlag==1}}" class='vote-box1'>
+    <view class='vote-title1'>{{vote_title}}</view>    
+    <view class='top-box1'>
+        <view class='userCount1'>
+            <view>0{{index}}</view>
+            <view>投票项</view>
+        </view>
+        <view class='userCount1'>
+            <view>0</view>
+            <view>投票数</view>
+        </view>         
+        <view class='userCount1'>
+            <view>{{userCount}}</view>
+            <view>参与人数</view>
+        </view>
+        <view class='date-limit1'>投票截至：{{limitDate}}</view>
+    </view>
+    <view class='vote-detail1'>{{vote_detail}}
+        <text>[{{vote_type}}]</text>
+    </view>
+    <view class='vote-options1'wx:for-items="{{vote_option}}" wx:key="{{index}}">
+        <view class="optionA1">
+        <image class="optionPic1"src='{{item.pic}}'></image>
+        <view class="optionCount1">{{index+1}}</view>
+        <view class="optionVote1"bindtap='bindChooseOption'data-index='{{index}}' data-flag='{{item.flag}}' data-count='{{item.count}}'>
+            <image class="votePic1" src="images/vote.png" hidden="{{item.flag}}"></image>
+        </view>
+
+        <!-- <view class='optionA'> -->
+            <view class='option-name1'data-index='{{index}}'>{{item.option}}</view>
+            <view class='voteCount1'>{{item.count}}票</view>
+        <!-- </view> -->
+        </view>
+    </view>
+    
+    <button class='vote-confirm-btn1' type='primary' form-type='submit' disabled="{{btnFlag}}" bindtap='voteSubmit'>确认</button>
+</view>
+
+
+<!-- 无图 -->
+<view wx:else class='vote-box'>
+    <view class='vote-title'>{{vote_title}}</view>
+    <button class="share" open-type="share"data-add='{{add_id}}'data-user='{{user_name}}'>
+    </button>
+        <image class="share-pic" src="images/share.png" />
+    <view class='vote-detail'>{{vote_detail}}
+        <text>[{{vote_type}}]</text>
+    </view>
+    <view class='vote-options'wx:for-items="{{vote_option}}" wx:key="{{index}}">
+         <view class='optionA' bindtap='bindChooseOption'data-index='{{index}}' data-flag='{{item.flag}}' data-count='{{item.count}}'>
+             <view class='option-name'data-index='{{index}}'>{{item.option}}</view>
+             <wxs module="fn">
+                    module.exports = {
+                        floor: function(num){
+                            return Math.floor(num);
+                        }
+                    }
+                </wxs>
+             <view wx:if="{{countAllOption==0}}" class='option-percent'data-index='{{index}}'hidden="{{true}}">{{fn.floor(item.count/countAllOption*100)}}%</view>
+
+             <view wx:else class='option-percent'data-index='{{index}}'hidden="{{percentFlag}}">{{fn.floor(item.count/countAllOption*100)}}%</view>
+                
+             <image class="confirm-pic"data-index='{{index}}' src="images/confirm.png" hidden="{{item.flag}}" />
+
+             <view class='progress-box'>
+                 <progress class='progress' percent='{{fn.floor(item.count/countAllOption*100)}}' activeColor='#1d953f' stroke-width='3'></progress>
+             </view>
+         </view>
+    </view>
+    <view class='bootom-box'>
+    <view class='date-limit'>投票截至：{{limitDate}}</view>
+    <view class='userCount'>参与人数：{{userCount}}</view>
+    </view>
+    <button class='vote-confirm-btn' type='primary' form-type='submit' disabled="{{btnFlag}}" bindtap='voteSubmit'>确认</button>
+</view>
